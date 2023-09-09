@@ -1,3 +1,7 @@
+"""
+This script processes video files to detect human presence using a pre-trained PyTorch model.
+If no human is detected in any of the frames, the video file is deleted.
+"""
 import os
 import cv2
 import numpy as np
