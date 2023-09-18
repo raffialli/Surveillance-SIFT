@@ -13,8 +13,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
 batch_size = 64
-learning_rate = 5e-5
-num_epochs = 200
+learning_rate = 1e-3
+num_epochs = 100
 num_classes = 2
 input_size = 3 * 640 * 360  # Updated to match your image size
 
@@ -34,7 +34,7 @@ val_dataset = ImageFolder(root=val_path, transform=transform)
 
 
 # Handle class imbalance
-class_count = [5465, 13027]
+class_count = [5542, 11849]
 n_samples = sum(class_count)
 class_weights = [n_samples / count for count in class_count]
 samples_weights = [class_weights[label] for _, label in train_dataset]
@@ -128,7 +128,7 @@ for epoch in range(num_epochs):
         min_val_loss = val_loss
         
         # Save the model
-        torch.save(model, 'FrontDoor_new_dataset.pth')
+        torch.save(model, 'FrontDoor_new_dataset_v2.pth')
         
     else:
         epochs_no_improve += 1
