@@ -3,8 +3,8 @@ import os
 import shutil
 
 input_folder = "E:\TensorFlow\Front Door Vids\human\images"
-backup_folder = "E:\TensorFlow\\backup\\training_images\human"
-resize_folder = "E:\TensorFlow\\backup\\training_images\\resize-human"
+backup_folder = "E:\TensorFlow\\backup\\training_images\\non-human"
+resize_folder = "E:\TensorFlow\\backup\\training_images\\resize-non-human"
 
 new_size = (320, 180)
 
