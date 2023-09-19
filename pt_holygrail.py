@@ -11,7 +11,7 @@ from model_definition import NN  # Assuming your model is defined in this file
 from PIL import Image
 
 # Load pre-trained model
-model = torch.load('FrontDoor_Full.pth')
+model = torch.load('FrontDoor_new_dataset_v2.pth')
 
 # Move model to GPU if available
 device = 'cuda:0'  # Change to 'cpu' if you don't have a GPU
@@ -21,7 +21,7 @@ model = model.to(device)
 model.eval()
 
 # Define directory containing video files
-folder_path = "E:\\TensorFlow\\20230301PM"
+folder_path = "E:\TensorFlow\\20230301PM"
 
 # List all files in the directory
 all_files = os.listdir(folder_path)
@@ -31,7 +31,7 @@ video_files = [f for f in all_files if f.endswith('.mp4')]
 
 # Define the transform for frames
 test_transform = transforms.Compose([
-    transforms.Resize((128, 128)),
+    transforms.Resize((640, 360)),
     transforms.ToTensor(),
 ])
 
@@ -63,7 +63,7 @@ for video_file in video_files:
             continue
 
         # Preprocess the frame
-        frame = cv2.resize(frame, (128, 128))
+        frame = cv2.resize(frame, (640, 360))
         frame = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))  # Convert to PIL Image
         frame_tensor = test_transform(frame)  # Apply transform
 
