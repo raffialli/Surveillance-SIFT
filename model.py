@@ -12,11 +12,11 @@ from model_definition import NN
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
-batch_size = 64
+batch_size = 128 # Changed from 64 to increase training speed
 learning_rate = 1e-3
-num_epochs = 100
+num_epochs = 15
 num_classes = 2
-input_size = 3 * 640 * 360  # Updated to match your image size
+input_size = 3 * 320 * 180  # Updated to match your image size
 
 # Data paths
 train_path = "E:\\TensorFlow\\Front Door Vids\\training-files\\training"
@@ -24,7 +24,7 @@ val_path = "E:\\TensorFlow\\Front Door Vids\\training-files\\validation"
 
 
 transform = transforms.Compose([
-    transforms.Resize((640, 360)),  # Resize the image to the expected input size
+    transforms.Resize((320, 180)),  # Resize the image to the expected input size
     transforms.ToTensor()  # Convert the PIL Image to a tensor
 ])
 
@@ -34,7 +34,7 @@ val_dataset = ImageFolder(root=val_path, transform=transform)
 
 
 # Handle class imbalance
-class_count = [5542, 11849]
+class_count = [5534, 15284]
 n_samples = sum(class_count)
 class_weights = [n_samples / count for count in class_count]
 samples_weights = [class_weights[label] for _, label in train_dataset]
@@ -63,7 +63,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Early stopping details
-n_epochs_stop = 50
+n_epochs_stop = 5
 min_val_loss = float('inf')
 epochs_no_improve = 0
 
@@ -128,7 +128,7 @@ for epoch in range(num_epochs):
         min_val_loss = val_loss
         
         # Save the model
-        torch.save(model, 'FrontDoor_new_dataset_v2.pth')
+        torch.save(model, 'FrontDoor_new_dataset_v3.pth')
         
     else:
         epochs_no_improve += 1
