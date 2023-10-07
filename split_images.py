@@ -3,11 +3,11 @@ import shutil
 from random import shuffle
 
 # Define the original directory where the resized images are
-original_dir = 'E:\\TensorFlow\\backup\\training_images\\resize-non-human'
+original_dir = 'E:\\TensorFlow\\backup\\training_images\\resize-human'
 
 # Define destination directories for training and validation
-train_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\training\\non-human'
-val_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\validation\\non-human'
+train_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\training\human'
+val_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\validation\human'
 
 # List all files in the original directory
 all_files = [f for f in os.listdir(original_dir) if os.path.isfile(os.path.join(original_dir, f))]

@@ -128,7 +128,7 @@ for epoch in range(num_epochs):
         min_val_loss = val_loss
         
         # Save the model
-        torch.save(model, 'FrontDoor_new_dataset_v3.pth')
+        torch.save(model, 'FrontDoor_new_dataset_v4.pth')
         
     else:
         epochs_no_improve += 1

@@ -11,7 +11,7 @@ from model_definition import NN  # Assuming your model is defined in this file
 from PIL import Image
 
 # Load pre-trained model
-model = torch.load('FrontDoor_new_dataset_v3.pth')
+model = torch.load('FrontDoor_new_dataset_v4.pth')
 
 # Move model to GPU if available
 device = 'cuda:0'  # Change to 'cpu' if you don't have a GPU
