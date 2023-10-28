@@ -11,7 +11,7 @@ from model_definition import NN  # Assuming your model is defined in this file
 from PIL import Image
 
 # Load pre-trained model
-model = torch.load('FrontDoor_new_dataset_v4.pth')
+model = torch.load('FrontDoor_new_dataset_v6.pth')
 
 # Move model to GPU if available
 device = 'cuda:0'  # Change to 'cpu' if you don't have a GPU
@@ -21,7 +21,7 @@ model = model.to(device)
 model.eval()
 
 # Define directory containing video files
-folder_path = "E:\TensorFlow\\20230301PM"
+folder_path = r"E:\TensorFlow\RealTest\20231012PM"
 
 # List all files in the directory
 all_files = os.listdir(folder_path)
