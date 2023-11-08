@@ -31,8 +31,8 @@ def delete_random_files(directory, percentage=10):
 # Directories to clean up
 src_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\training\\non-human'
 val_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\validation\\non-human'
-test_dir = 'E:\\TensorFlow\\Front Door Vids\\training-files\\testing\\non-human'
+
 
 # Apply the function to each directory
-for directory in [src_dir, val_dir, test_dir]:
+for directory in [src_dir, val_dir]:
     delete_random_files(directory, percentage=10)
