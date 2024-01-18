@@ -1,5 +1,5 @@
 # Ignore compiled Python files
 __pycache__/
-
+.vscode/
 # Ignore PyTorch models
 *.pth
