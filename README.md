@@ -32,11 +32,11 @@ The video processing script processes each frame of the input video files to det
 - PIL
 
 ## Usage
-To train the model, run:
-python model_training.py
+To train the model, use scripts in utils dir to extract frames from videos and resize to aid in training speed. Once dataset is available, run:
+model.py
 
 To process videos for human detection, run:
-python video_processing.py
+python main.py
 
 
 ## Contributing
