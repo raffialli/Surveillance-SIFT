@@ -34,7 +34,7 @@ val_dataset = ImageFolder(root=val_path, transform=transform)
 
 
 # Handle class imbalance
-class_count = [5534, 15284]
+class_count = [5733, 12532]
 n_samples = sum(class_count)
 class_weights = [n_samples / count for count in class_count]
 samples_weights = [class_weights[label] for _, label in train_dataset]
@@ -128,7 +128,7 @@ for epoch in range(num_epochs):
         min_val_loss = val_loss
         
         # Save the model
-        torch.save(model, 'FrontDoor_new_dataset_v4.pth')
+        torch.save(model, 'FrontDoor_new_dataset_v7.pth')
         
     else:
         epochs_no_improve += 1
