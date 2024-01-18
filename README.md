@@ -4,11 +4,11 @@
 This repository contains a PyTorch-based project designed for detecting human presence in video surveillance footage. The project leverages a custom neural network model to classify images as 'human' or 'non-human'. It includes scripts for preprocessing video frames, training the model on a labeled dataset, and applying the model to new video data to detect human presence.
 
 ## Project Structure
-- `model_training.py`: Script for training the neural network model using PyTorch.
-- `video_processing.py`: Script for processing video files and detecting human presence.
+- `model.py`: Script for training the neural network model using PyTorch.
+- `mail.py`: Script for processing video files and detecting human presence.
 - `model_definition.py`: Contains the neural network architecture.
 - `utils/`: Directory containing utility scripts for data preprocessing and other helper functions.
-- `FrontDoor.pth`: Trained PyTorch model file.
+
 
 ## Model Training
 The model is trained on a dataset of surveillance images labeled as 'human' and 'non-human'. It includes the following key steps:
