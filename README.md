@@ -5,7 +5,7 @@ This repository contains a PyTorch-based project designed for detecting human pr
 
 ## Project Structure
 - `model.py`: Script for training the neural network model using PyTorch.
-- `mail.py`: Script for processing video files and detecting human presence.
+- `main.py`: Script for processing video files and detecting human presence.
 - `model_definition.py`: Contains the neural network architecture.
 - `utils/`: Directory containing utility scripts for data preprocessing and other helper functions.
 
